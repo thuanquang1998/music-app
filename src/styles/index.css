@@ -1,0 +1,539 @@
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+
+  @apply font-normal;
+  @apply text-sm;
+  @apply m-0;
+
+  @apply bg-layout-bg;
+  @apply text-primary;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #555;
+}
+
+main {
+  @apply relative;
+  @apply min-h-full;
+
+  width: calc(100% - theme("spacing.60"));
+}
+
+button {
+  outline: 0;
+}
+
+a:hover {
+  color: var(--white);
+}
+
+#root {
+  @apply relative;
+}
+
+.container {
+  @apply min-w-full;
+  @apply flex;
+
+  height: calc(100vh - 96px);
+}
+
+/* start sidebar */
+.sidebar {
+  @apply w-60;
+  @apply h-screen;
+  @apply pt-16;
+  @apply pb-14;
+
+  @apply bg-sidebar-bg;
+}
+
+.sidebar__logo {
+  @apply inline-block;
+  @apply w-12;
+}
+
+.sidebar__nav {
+  @apply w-full;
+}
+
+.sidebar__list li {
+  @apply border-l-2;
+  @apply border-solid;
+  @apply border-transparent;
+
+  color: var(--navigation-text);
+}
+
+.sidebar__list li:hover {
+  color: var(--text-item-hover);
+}
+
+.sidebar__list li.is-active {
+  @apply bg-alpha-bg;
+  @apply border-l-2;
+  @apply border-solid;
+
+  @apply border-purple-primary;
+  color: var(--text-item-hover);
+}
+
+.sidebar__link {
+  @apply flex;
+  @apply items-center;
+  @apply px-6;
+  @apply py-2.5;
+}
+
+.sidebar__divide {
+  @apply relative;
+  @apply h-px;
+}
+
+.sidebar__divide::after {
+  @apply top-0;
+  @apply absolute;
+  @apply left-6;
+  @apply right-6;
+  @apply border-t;
+  @apply border-solid;
+  @apply border-primary;
+
+  content: "";
+}
+/* end sidebar */
+
+/* start topbar */
+.topbar {
+  @apply flex;
+  @apply items-center;
+  @apply justify-items-center;
+  @apply h-20;
+  @apply px-8;
+  @apply bg-topbar-bg;
+}
+
+.topbar__left {
+  @apply flex;
+  @apply flex-grow;
+  @apply mr-2;
+}
+
+.topbar__right {
+  @apply flex;
+  @apply items-center;
+  @apply justify-end;
+}
+
+.topbar__button.is-disabled {
+  @apply cursor-not-allowed;
+  @apply opacity-30;
+  @apply select-none;
+  @apply pointer-events-none;
+}
+
+.topbar__search {
+  @apply relative;
+  @apply w-full;
+  @apply h-10;
+  @apply max-w-2xl;
+  @apply rounded-3xl;
+  @apply flex;
+  @apply items-center;
+  @apply py-4;
+  @apply px-3;
+  @apply ml-3;
+
+  @apply bg-alpha-bg;
+  color: var(--search-text);
+}
+
+.topbar__input {
+  @apply w-full;
+  @apply h-8;
+  @apply bg-transparent;
+  @apply -mt-1;
+
+  @apply outline-none;
+}
+
+/* end topbar */
+
+/* start tooltip */
+.tooltip {
+  @apply w-10;
+  @apply h-10;
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
+  @apply rounded-full;
+
+  @apply bg-alpha-bg;
+}
+
+.tooltip .icon {
+  @apply w-max;
+  @apply mr-0;
+}
+/* end tooltip */
+
+/* start mainpage */
+.mainpage {
+  @apply relative;
+  @apply w-full;
+  @apply h-full;
+  @apply overflow-hidden;
+}
+
+.mainpage__container {
+  @apply absolute;
+  @apply overflow-x-hidden;
+  @apply overflow-y-scroll;
+  @apply mx-auto;
+  @apply my-0;
+  @apply py-0;
+  @apply px-9;
+
+  inset: 0px;
+}
+
+.mainpage__content {
+  @apply relative;
+  @apply mt-6;
+  @apply mb-24;
+}
+/* end mainpage */
+
+/* start title */
+.title {
+  @apply text-lg;
+  @apply font-bold;
+}
+
+/* end title */
+
+/* start channel */
+.channel + .channel {
+  @apply mt-8;
+}
+
+.channel__carousel {
+  @apply flex;
+}
+/* end channel */
+
+/* start card */
+.card {
+  @apply w-1/5;
+}
+
+.card__image {
+  @apply cursor-pointer;
+  @apply relative;
+  @apply overflow-hidden;
+}
+
+.card__image img {
+  transition: transform 0.7s;
+}
+
+.card__image:hover:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--dark-alpha-50);
+}
+
+.card__image:hover img {
+  transform: scale(1.1);
+}
+
+/* end card */
+
+/* start sliders */
+.sliders {
+  @apply mb-8;
+}
+
+.sliders__container {
+  @apply relative;
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
+
+  height: calc(30vw - 149.5px);
+}
+
+.sliders__control {
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
+  @apply absolute;
+  @apply rounded-full;
+  @apply w-14;
+  @apply h-14;
+
+  @apply text-white;
+  background-color: hsla(0, 0%, 100%, 0.15);
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 15%);
+  transform: translateY(-50%);
+}
+
+.sliders__control--next {
+  @apply top-2/4;
+  @apply right-5;
+  @apply opacity-0;
+}
+
+.sliders__control--prev {
+  @apply top-2/4;
+  @apply left-5;
+  @apply opacity-0;
+}
+
+.sliders__prev {
+  @apply absolute;
+  @apply w-6/12;
+  @apply h-full;
+  @apply cursor-pointer;
+  @apply z-10;
+  @apply left-0;
+}
+
+.sliders__next {
+  @apply absolute;
+  @apply w-6/12;
+  @apply h-full;
+  @apply cursor-pointer;
+  @apply z-10;
+  @apply right-0;
+}
+
+.sliders__prev:hover button,
+.sliders__next:hover button {
+  @apply opacity-100;
+}
+
+.sliders__item {
+  @apply absolute;
+  @apply h-auto;
+  @apply z-0;
+  @apply opacity-0;
+  @apply rounded-lg;
+  @apply h-full;
+  @apply w-2/5;
+
+  /* @apply bg-loading-bg-animation; */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out,
+    z-index 0s linear 0.25s;
+}
+
+.sliders__item figure {
+  @apply rounded-md;
+  @apply overflow-hidden;
+
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.sliders__item img {
+  @apply w-full;
+
+  transition: transform 0.7s;
+}
+
+.sliders__item--previous {
+  transform: translateX(-77%) scale(0.85);
+}
+
+.sliders__item--next {
+  transform: translateX(77%) scale(0.85);
+}
+
+.sliders__item--selected {
+  @apply opacity-100;
+  @apply z-2;
+
+  transform: translateX(0);
+}
+
+.sliders__item--next,
+.sliders__item--previous {
+  @apply opacity-100;
+  @apply z-1;
+}
+
+.sliders__item-selected {
+  @apply opacity-100;
+  @apply z-1;
+
+  transform: translateX(0);
+}
+
+/* end sliders */
+
+/* start progress bar */
+.progressBar {
+  @apply w-full;
+  @apply h-4;
+  @apply cursor-pointer;
+  @apply flex;
+  @apply items-center;
+}
+
+.progressBar:hover .progressBar__bg {
+  @apply h-1;
+}
+
+.progressBar:hover .progressBar__dot::after {
+  @apply visible;
+}
+
+.progressBar__bg {
+  @apply w-full;
+  @apply h-1;
+  @apply relative;
+
+  @apply bg-alpha-bg;
+}
+
+.progressBar__dot {
+  @apply absolute;
+  @apply left-0;
+  @apply top-0;
+  @apply h-full;
+
+  @apply bg-fg-color-bg;
+}
+
+.progressBar__dot::after {
+  content: "";
+  @apply absolute;
+  @apply -right-2;
+  @apply -top-1;
+  @apply w-3;
+  @apply h-3;
+  @apply rounded-full;
+  @apply z-2;
+  @apply invisible;
+
+  @apply bg-fg-color-bg;
+}
+
+/* end progress bar */
+
+/* start musicNote */
+.musicNote {
+  @apply w-3;
+  @apply h-3;
+  @apply absolute;
+  @apply opacity-0;
+  top: calc(50% - 5px);
+  left: calc(50% - 5px);
+  -webkit-animation-name: 4.8s bubble-1 linear infinite;
+  animation: 4.8s bubble-1 linear infinite;
+  animation-play-state: paused;
+}
+
+.musicNote path {
+  fill: var(--text-primary);
+}
+
+.musicNote.note-2 {
+  animation-delay: 1.2s;
+  animation-name: bubble-2;
+}
+
+.musicNote.note-3 {
+  animation-delay: 2.4s;
+}
+
+.musicNote .note-4 {
+  animation-delay: 3.6s;
+  animation-name: bubble-2;
+}
+
+@keyframes bubble-1 {
+  0% {
+    @apply opacity-0;
+    transform: rotate(90deg) translate(40px) rotate(-90deg);
+  }
+
+  50% {
+    @apply opacity-100;
+    transform: rotate(180deg) translate(55px) rotate(-180deg) scale(1.3);
+  }
+
+  to {
+    @apply opacity-0;
+    transform: rotate(260deg) translate(70px) rotate(-260deg) scale(1.7)
+      rotate(45deg) rotate(50deg);
+  }
+}
+
+@keyframes bubble-2 {
+  0% {
+    @apply opacity-0;
+    transform: rotate(90deg) translate(40px) rotate(-90deg);
+  }
+
+  50% {
+    @apply opacity-100;
+    transform: rotate(175deg) translate(57.5px) rotate(-175deg) scale(1.3)
+      rotate(-50deg);
+  }
+
+  to {
+    @apply opacity-0;
+    transform: rotate(260deg) translate(75px) rotate(-260deg) scale(1.7)
+      rotate(45deg) rotate(-50deg);
+  }
+}
+
+.thumbnail {
+  @apply m-0;
+  @apply w-16;
+  @apply w-16;
+  @apply rounded-full;
+  @apply relative;
+  @apply overflow-hidden;
+  animation: 12s spinner linear infinite;
+  animation-play-state: paused;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.music_played .musicNote,
+.music_played .thumbnail {
+  animation-play-state: running;
+}
+
+/* end musicNote */

@@ -1,0 +1,132 @@
+[class*=" ic-"]:before,
+[class^="ic-"]:before,
+[data-icon]:before {
+  font-family: "mp3-zing" !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-feature-settings: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon {
+  @apply w-6;
+  @apply h-6;
+  @apply rounded-3xl;
+  @apply inline-block;
+  @apply text-2xl;
+
+  color: var(--text-primary);
+}
+
+.icon--xlarge {
+  @apply text-xl;
+}
+
+.icon--xsmall {
+  @apply w-4;
+  @apply h-4;
+  @apply text-base;
+}
+
+.icon--4xlarge {
+  @apply w-10;
+  @apply h-10;
+  @apply text-4xl;
+}
+
+.ic-library:before {
+  content: "\e019";
+}
+
+.ic-mn-home:before {
+  content: "\e017";
+}
+
+.ic-mn-zingchart:before {
+  content: "\e015";
+}
+
+.ic-feed:before {
+  content: "\e018";
+}
+
+.ic-mn-song:before {
+  content: "\3e";
+}
+
+.ic-mn-catalogue:before {
+  content: "\e013";
+}
+
+.ic-mn-top100:before {
+  content: "\e014";
+}
+
+.ic-mn-mv:before {
+  content: "\4f";
+}
+
+.ic-back:before {
+  content: "\25";
+}
+
+.ic-forward:before {
+  content: "\22";
+}
+
+.ic-search:before {
+  content: "\e000";
+}
+
+.ic-upload:before {
+  content: "\21";
+}
+
+.ic-settings:before {
+  content: "\e001";
+}
+
+.ic-go-right:before {
+  content: "\41";
+}
+
+.ic-go-left:before {
+  content: "\7a";
+}
+
+.ic-volume:before {
+  content: "\e009";
+}
+
+.ic-volume-mute:before {
+  content: "\e00a";
+}
+
+.ic-shuffle:before {
+  content: "\e003";
+}
+
+.ic-pre:before {
+  content: "\56";
+}
+
+.ic-play-circle-outline:before {
+  content: "\5f";
+}
+
+.ic-pause-circle-outline:before {
+  content: "\3f";
+}
+
+.ic-next:before {
+  content: "\4e";
+}
+
+.ic-repeat:before {
+  content: "\59";
+}
